@@ -22,13 +22,13 @@ namespace CSU2.ViewModels
 
         public int NumeroMesa { get; set; }
 
-        public int CarneAsada { get; set; } 
-        public int EnchiladasVerdes { get; set; }
-        public int Sopa { get; set; }
+        public int Platillo1 { get; set; } 
+        public int Platillo2 { get; set; }
+        public int Platillo3 { get; set; }
 
-        public int CocaCola { get; set; } 
-        public int Tecate { get; set; } 
-        public int Jugo { get; set; }
+        public int Bebida1 { get; set; } 
+        public int Bebida2 { get; set; } 
+        public int Bebida3 { get; set; }
 
         private bool esplatillo = true;
 
@@ -77,12 +77,12 @@ namespace CSU2.ViewModels
                     await service.Ordenar(Pedido);
                     Pedido = new Pedido();
                     NumeroMesa = 0;
-                    CarneAsada = 0;
-                    Jugo = 0;
-                    CocaCola = 0;
-                    Tecate = 0;
-                    EnchiladasVerdes = 0;
-                    Sopa = 0;
+                    Platillo1 = 0;
+                    Bebida3 = 0;
+                    Bebida1 = 0;
+                    Bebida2 = 0;
+                    Platillo2 = 0;
+                    Platillo3 = 0;
 
 
                     Error = "";
@@ -109,11 +109,11 @@ namespace CSU2.ViewModels
         {
             Bebida bebida = new Bebida();
 
-            if (CocaCola > 0)
+            if (Bebida1 > 0)
             {
                 bebida = new Bebida()
                 {
-                    Cantidad = CocaCola,
+                    Cantidad = Bebida1,
                     Nombre = "Coca Cola"
                 };
 
@@ -122,23 +122,23 @@ namespace CSU2.ViewModels
 
 
 
-            if (Tecate > 0)
+            if (Bebida2 > 0)
             {
                 bebida = new Bebida()
                 {
-                    Cantidad = Tecate,
-                    Nombre = "Tecate"
+                    Cantidad = Bebida2,
+                    Nombre = "Bebida2"
                 };
 
                 Pedido.Bebidas.Add(bebida);
             }
 
-            if (Jugo > 0)
+            if (Bebida3 > 0)
             {
                 bebida = new Bebida()
                 {
-                    Cantidad = Jugo,
-                    Nombre = "Jugo"
+                    Cantidad = Bebida3,
+                    Nombre = "Bebida3"
                 };
 
                 Pedido.Bebidas.Add(bebida);
@@ -151,11 +151,11 @@ namespace CSU2.ViewModels
 
             Platillo platillo = new Platillo();
 
-            if (CarneAsada > 0)
+            if (Platillo1 > 0)
             {
                 platillo = new Platillo()
                 {
-                    Cantidad = CarneAsada,
+                    Cantidad = Platillo1,
                     Nombre = "Carne Asada"
                 };
 
@@ -164,23 +164,23 @@ namespace CSU2.ViewModels
 
             
 
-            if (EnchiladasVerdes > 0)
+            if (Platillo2 > 0)
             {
                 platillo = new Platillo()
                 {
-                    Cantidad = EnchiladasVerdes,
+                    Cantidad = Platillo2,
                     Nombre = "Enchiladas Verdes"
                 };
 
                 Pedido.Platillos.Add(platillo);
             }
 
-            if (Sopa > 0)
+            if (Platillo3 > 0)
             {
                 platillo = new Platillo()
                 {
-                    Cantidad = Sopa,
-                    Nombre = "Sopa"
+                    Cantidad = Platillo3,
+                    Nombre = "Platillo3"
                 };
 
                 Pedido.Platillos.Add(platillo);

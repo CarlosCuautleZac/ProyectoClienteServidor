@@ -12,138 +12,138 @@
         <Image Source="drawable/FonditaCoffee.png"></Image>
         <Label HorizontalTextAlignment="Center" FontSize="40">Menu</Label>
 
-        <Label HorizontalTextAlignment="Center" FontSize="15">Numero de mesa:</Label>
-        <Entry Text="{Binding NumeroMesa}"  Keyboard="Numeric"></Entry>
+        <StackLayout Orientation="Horizontal" Margin="10,0" >
+            <Label VerticalOptions="Center" HorizontalTextAlignment="Center" FontSize="17">Numero de mesa:</Label>
+            <Entry VerticalOptions="Center" Text="{Binding NumeroMesa}" HorizontalOptions="FillAndExpand" Keyboard="Numeric"></Entry>
 
+        </StackLayout>
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
             <RadioButton CornerRadius="10" BorderColor="White"  IsChecked="{Binding EsPlatillo}" Margin="10,0" Content="Platillos"></RadioButton>
             <RadioButton CornerRadius="10" BorderColor="White" Margin="10,0" Content="Bebidas"></RadioButton>
         </StackLayout>
-        
-        <Grid>
-            
-            <Grid.Triggers>
-                <DataTrigger TargetType="Grid" Binding="{Binding EsPlatillo}" Value="False">
-                    <Setter Property="IsVisible" Value="false"></Setter>
-                </DataTrigger>
-            </Grid.Triggers>
-            
-            <Grid.RowDefinitions>
-                <RowDefinition Height="150"></RowDefinition>
-                <RowDefinition Height="150"></RowDefinition>
-                <RowDefinition Height="150"></RowDefinition>
-            </Grid.RowDefinitions>
 
-            <Grid Margin="10">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="100"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition ></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <StackLayout Margin="10">
-                    <Image WidthRequest="100" HorizontalOptions="Start" Source="https://bing.com/th?id=AMMS_faa991e2147a89682aee8b3b89b48241"></Image>
-                    <Label Margin="15">Carne Asada</Label>
-                </StackLayout>
-                <Entry Grid.Column="1" HeightRequest="10" Text="{Binding CarneAsada}" Keyboard="Numeric"></Entry>
+        <ScrollView>
+            <Grid>
+                <Grid>
+
+                    <Grid.Triggers>
+                        <DataTrigger TargetType="Grid" Binding="{Binding EsPlatillo}" Value="False">
+                            <Setter Property="IsVisible" Value="false"></Setter>
+                        </DataTrigger>
+                    </Grid.Triggers>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="170"></RowDefinition>
+                        <RowDefinition Height="170"></RowDefinition>
+                        <RowDefinition Height="170"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid Margin="10,10,0,0" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition ></RowDefinition>
+                            <RowDefinition ></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition ></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Row="1" Grid.Column="0" HorizontalOptions="Start" Source="https://www.recetasnestle.com.mx/sites/default/files/styles/recipe_detail_desktop/public/srh_recipes/1a64f704bb668356fe11d026ab1ad371.png.webp?itok=akROHorX"></Image>
+                        <Label Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,15">Carne Asada</Label>
+                        <Entry Grid.Column="1" Grid.Row="1" VerticalOptions="Center"  Text="{Binding Platillo1}"   Keyboard="Numeric"></Entry>
+                    </Grid>
+
+                    <Grid Margin="10,10,0,0" Grid.Row="1" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition ></RowDefinition>
+                            <RowDefinition ></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition ></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image  Grid.Row="1" Grid.Column="0" HorizontalOptions="Start" Source="https://www.recetasnestle.com.mx/sites/default/files/styles/recipe_detail_desktop/public/srh_recipes/d0ece6b658cec226902ba43a7ee5bdf2.jpg.webp?itok=a-naAveb"></Image>
+                        <Label Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,15">Sopa</Label>
+                        <Entry Grid.Column="1" Grid.Row="1" VerticalOptions="Center"  Text="{Binding Platillo2}"   Keyboard="Numeric"></Entry>
+                    </Grid>
+
+                    <Grid Margin="10,10,0,0" Grid.Row="2" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition ></RowDefinition>
+                            <RowDefinition ></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition ></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                            <Image Grid.Row="1" Grid.Column="0" HorizontalOptions="Start" HeightRequest="100" Source="https://www.recetasnestle.com.mx/sites/default/files/styles/recipe_detail_desktop/public/srh_recipes/c1a47a2e6bd19313b88b7946867a4059.jpg.webp?itok=UHFQS0v6"></Image>
+                            <Label Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,15">Enchiladas Verdes</Label>
+                            <Entry Grid.Column="1" Grid.Row="1" VerticalOptions="Center"  Text="{Binding Platillo3}"   Keyboard="Numeric"></Entry>
+                    </Grid>
+
+                </Grid>
+
+                <Grid>
+
+                    <Grid.Triggers>
+                        <DataTrigger TargetType="Grid" Binding="{Binding EsPlatillo}" Value="True">
+                            <Setter Property="IsVisible" Value="false"></Setter>
+                        </DataTrigger>
+                    </Grid.Triggers>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="170"></RowDefinition>
+                        <RowDefinition Height="170"></RowDefinition>
+                        <RowDefinition Height="170"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid Margin="0,0,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition ></RowDefinition>
+                            <RowDefinition ></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition ></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Row="1" Grid.Column="0" HorizontalOptions="Start" Source="https://static.treslineas.com.ar/foto/nota-1690360-pepsico-pone-produccion-pepsi-rusia-1037633.jpg?imgres=400x0x80"></Image>
+                        <Label Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,15">Pepsi</Label>
+                        <Entry Grid.Column="1" Grid.Row="1" VerticalOptions="Center"  Text="{Binding Bebida1}"   Keyboard="Numeric"></Entry>
+                    </Grid>
+
+                    <Grid Margin="10,10,0,0" Grid.Row="1" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition ></RowDefinition>
+                            <RowDefinition ></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition ></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image  Grid.Row="1" Grid.Column="0" HorizontalOptions="Start" Source="https://tumejorcerveza.com/wp-content/uploads/tecate-lata-botella.jpg"></Image>
+                        <Label Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,15">Tecate</Label>
+                        <Entry Grid.Column="1" Grid.Row="1" VerticalOptions="Center"  Text="{Binding Bebida2}"   Keyboard="Numeric"></Entry>
+                    </Grid>
+
+                    <Grid Margin="10,10,0,0" Grid.Row="2" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition ></RowDefinition>
+                            <RowDefinition ></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition ></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Row="1" Grid.Column="0" HorizontalOptions="Start" HeightRequest="100" Source="https://bloximages.newyork1.vip.townnews.com/notiuno.com/content/tncms/assets/v3/editorial/8/76/876d934e-7953-11ec-9a88-ffbb56ffd7ec/61e854e2890b0.image.jpg?resize=400%2C200"></Image>
+                        <Label Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,15">Jugo</Label>
+                        <Entry Grid.Column="1" Grid.Row="1" VerticalOptions="Center"  Text="{Binding Bebida3}"   Keyboard="Numeric"></Entry>
+                    </Grid>
+
+                </Grid>
             </Grid>
-
-            <Grid Margin="10,50,0,0" Grid.Row="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="100"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition ></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <StackLayout Margin="10">
-                    <Image WidthRequest="100" HorizontalOptions="Start" HeightRequest="100" Source="https://bing.com/th?id=AMMS_c63242a9f46b9c2e7dad33dbce839d6e"></Image>
-                    <Label Margin="15">Sopa</Label>
-                </StackLayout>
-                <Entry Grid.Column="1" HeightRequest="10" Text="{Binding Sopa}"  Keyboard="Numeric"></Entry>
-            </Grid>
-
-            <Grid Margin="10,50,0,0" Grid.Row="2">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="100"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition ></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <StackLayout Margin="10">
-                    <Image WidthRequest="100" HorizontalOptions="Start" HeightRequest="100" Source="https://www.recetasnestle.com.mx/sites/default/files/styles/recipe_detail_desktop/public/srh_recipes/c1a47a2e6bd19313b88b7946867a4059.jpg.webp?itok=UHFQS0v6"></Image>
-                    <Label Margin="15" >Enchiladas Verdes</Label>
-                </StackLayout>
-                <Entry Grid.Column="1" Text="{Binding EnchiladasVerdes}" HeightRequest="10"  Keyboard="Numeric"></Entry>
-            </Grid>
-
-        </Grid>
-
-        <Grid>
-
-            <Grid.Triggers>
-                <DataTrigger TargetType="Grid" Binding="{Binding EsPlatillo}" Value="True">
-                    <Setter Property="IsVisible" Value="false"></Setter>
-                </DataTrigger>
-            </Grid.Triggers>
-
-            <Grid.RowDefinitions>
-                <RowDefinition Height="150"></RowDefinition>
-                <RowDefinition Height="150"></RowDefinition>
-                <RowDefinition Height="150"></RowDefinition>
-            </Grid.RowDefinitions>
-
-            <Grid Margin="10">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="100"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition ></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <StackLayout Margin="10">
-                    <Image WidthRequest="100" HorizontalOptions="Start" Source="https://cdn.domestika.org/c_fill,dpr_1.0,f_auto,h_1200,pg_1,t_base_params,w_1200/v1615564705/project-covers/001/128/349/1128349-original.jpg?1615564705"></Image>
-                    <Label Margin="15">Coca Cola</Label>
-                </StackLayout>
-                <Entry Grid.Column="1" HeightRequest="10" Text="{Binding CocaCola}" Keyboard="Numeric"></Entry>
-            </Grid>
-
-            <Grid Margin="10,50,0,0" Grid.Row="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="100"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition ></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <StackLayout Margin="10">
-                    <Image WidthRequest="100" HorizontalOptions="Start" HeightRequest="100" Source="https://c8.alamy.com/zoomses/9/ca6c93c1e3c445938206dad36aa38d42/2bx41m9.jpg"></Image>
-                    <Label Margin="15">Tecate</Label>
-                </StackLayout>
-                <Entry Grid.Column="1" HeightRequest="10" Text="{Binding Tecate}"  Keyboard="Numeric"></Entry>
-            </Grid>
-
-            <Grid Margin="10,50,0,0" Grid.Row="2">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="100"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition ></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <StackLayout Margin="10">
-                    <Image WidthRequest="100" Aspect="AspectFit" HorizontalOptions="Start" HeightRequest="100" Source="https://d320djwtwnl5uo.cloudfront.net/diccionario/diccio_640.jpg"></Image>
-                    <Label Margin="15" >Jugo</Label>
-                </StackLayout>
-                <Entry Grid.Column="1" Text="{Binding Jugo}" HeightRequest="10"  Keyboard="Numeric"></Entry>
-            </Grid>
-
-        </Grid>
+        </ScrollView>
 
         <Button WidthRequest="100" Margin="10" VerticalOptions="EndAndExpand" CornerRadius="5" Command="{Binding OrdenarCommand}" Text="Ordenar"></Button>
-        <Label Text="{Binding Error}" TextColor="Red"></Label>
+        <Label Text="{Binding Error}" VerticalOptions="End" TextColor="Red"></Label>
     </StackLayout>
 
 </ContentPage>
