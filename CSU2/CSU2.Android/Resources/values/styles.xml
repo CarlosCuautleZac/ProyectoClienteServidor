@@ -15,4 +15,7 @@
          which is used to tint widgets -->
     <!--<item name="colorAccent">#FF4081</item>-->
   </style>
+	<style name="nuevotema" parent="Theme.AppCompat.Light.NoActionBar">
+		<item name="android:windowBackground">@drawable/layout1</item>
+	</style>
 </resources>

@@ -66,9 +66,9 @@ namespace CSU2.ViewModels
                 Pedido.Fecha = DateTime.Now;
 
                 if (Pedido.NumeroMesa < 1)
-                    Error = "Numero de mesa equivocado" + Environment.NewLine;
+                    Error = "Numero de mesa inválido" + Environment.NewLine;
                 if (Pedido.Bebidas.Count + Pedido.Platillos.Count < 1)
-                    Error = "Debe ordenar por lo menos un platillo o una bebida";
+                    Error = "Debe ordenar al menos un platillo o una bebida";
 
                 if (Error == "")
                 {
@@ -88,7 +88,7 @@ namespace CSU2.ViewModels
                     Error = "";
                     Actualizar();
 
-                    await Application.Current.MainPage.DisplayAlert("Advertencia", "Se ha enviado la orden a cocina", "OK");
+                    await Application.Current.MainPage.DisplayAlert("¡Listo!", "Su orden ya fue enviada", "Entendido");
 
                 }
                 else

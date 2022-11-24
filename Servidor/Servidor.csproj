@@ -9,6 +9,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\comidaEnCamino.jpg" />
+    <None Remove="Assets\FonditaCoffee.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\comidaEnCamino.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\FonditaCoffee.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 

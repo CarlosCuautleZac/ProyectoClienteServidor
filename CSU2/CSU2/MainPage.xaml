@@ -8,15 +8,16 @@
         <vm:PedidoViewModel></vm:PedidoViewModel>
     </ContentPage.BindingContext>
 
-    <StackLayout>
+    <StackLayout Background="/drawable/Manteles.jfif">
+        <Image Source="drawable/FonditaCoffee.png"></Image>
         <Label HorizontalTextAlignment="Center" FontSize="40">Menu</Label>
 
         <Label HorizontalTextAlignment="Center" FontSize="15">Numero de mesa:</Label>
         <Entry Text="{Binding NumeroMesa}"  Keyboard="Numeric"></Entry>
 
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-            <RadioButton  IsChecked="{Binding EsPlatillo}" Margin="10" Content="Platillos"></RadioButton>
-            <RadioButton Content="Bebidas"></RadioButton>
+            <RadioButton CornerRadius="10" BorderColor="White"  IsChecked="{Binding EsPlatillo}" Margin="10,0" Content="Platillos"></RadioButton>
+            <RadioButton CornerRadius="10" BorderColor="White" Margin="10,0" Content="Bebidas"></RadioButton>
         </StackLayout>
         
         <Grid>
@@ -141,7 +142,7 @@
 
         </Grid>
 
-        <Button VerticalOptions="EndAndExpand" CornerRadius="5" Command="{Binding OrdenarCommand}" Text="Ordenar"></Button>
+        <Button WidthRequest="100" Margin="10" VerticalOptions="EndAndExpand" CornerRadius="5" Command="{Binding OrdenarCommand}" Text="Ordenar"></Button>
         <Label Text="{Binding Error}" TextColor="Red"></Label>
     </StackLayout>
 
