@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace CSU2.Droid
 {
-    [Activity(Label = "La Fondita C&G's", Icon = "@drawable/FonditaCoffee",
+    [Activity(Label = "La Fondita C&G's", Icon = "@mipmap/icon",
     Theme = "@style/nuevotema", MainLauncher = true,
     ConfigurationChanges = ConfigChanges.ScreenSize)]
     public class SplashScreen : Activity

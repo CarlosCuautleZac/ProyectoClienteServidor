@@ -114,7 +114,7 @@ namespace CSU2.ViewModels
                 bebida = new Bebida()
                 {
                     Cantidad = Bebida1,
-                    Nombre = "Coca Cola"
+                    Nombre = "Pepsi"
                 };
 
                 Pedido.Bebidas.Add(bebida);

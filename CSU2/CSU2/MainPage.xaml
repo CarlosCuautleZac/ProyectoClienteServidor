@@ -9,8 +9,7 @@
     </ContentPage.BindingContext>
 
     <StackLayout Background="/drawable/Manteles.jfif">
-        <Image Source="drawable/FonditaCoffee.png"></Image>
-        <Label HorizontalTextAlignment="Center" FontSize="40">Menu</Label>
+        <Image Aspect="AspectFit" WidthRequest="150" Margin="10" Source="drawable/FonditaCoffee.png"></Image>
 
         <StackLayout Orientation="Horizontal" Margin="10,0" >
             <Label VerticalOptions="Center" HorizontalTextAlignment="Center" FontSize="17">Numero de mesa:</Label>
@@ -18,8 +17,8 @@
 
         </StackLayout>
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-            <RadioButton CornerRadius="10" BorderColor="White"  IsChecked="{Binding EsPlatillo}" Margin="10,0" Content="Platillos"></RadioButton>
-            <RadioButton CornerRadius="10" BorderColor="White" Margin="10,0" Content="Bebidas"></RadioButton>
+            <RadioButton Padding="5" CornerRadius="10" BorderColor="White"  IsChecked="{Binding EsPlatillo}" Margin="10,0" Content="Platillos"></RadioButton>
+            <RadioButton Padding="5" CornerRadius="10" BorderColor="White" Margin="10,0" Content="Bebidas"></RadioButton>
         </StackLayout>
 
         <ScrollView>
