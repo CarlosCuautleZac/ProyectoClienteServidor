@@ -6,9 +6,6 @@
 
 
     
-    <ContentPage.BindingContext>
-        <vm:PedidoViewModel></vm:PedidoViewModel>
-    </ContentPage.BindingContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="7*"></RowDefinition>
