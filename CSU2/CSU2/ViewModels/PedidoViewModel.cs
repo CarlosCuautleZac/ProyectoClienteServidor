@@ -153,38 +153,40 @@ namespace CSU2.ViewModels
         {
             try
             {
-                if(Connectivity.NetworkAccess != NetworkAccess.Internet)
+                if (Connectivity.NetworkAccess == NetworkAccess.Internet)
                 {
-                    Error = "No hay Conexion a internet" + Environment.NewLine;
+
+                    Pedido.Fecha = DateTime.Now;
+
+                    await service.Ordenar(Pedido);
+                    Pedido = new Pedido();
+                    NumeroMesa = 0;
+                    Platillo1 = 0;
+                    Bebida3 = 0;
+                    Bebida1 = 0;
+                    Bebida2 = 0;
+                    Platillo2 = 0;
+                    Platillo3 = 0;
+
+
+                    Error = "";
+                    Actualizar();
+
+
+
+                    await Application.Current.MainPage.DisplayAlert("¡Listo!", "Su orden ya fue enviada", "Entendido");
+                }
+                else
+                {
+                    Error = "No hay Conexion a internet";
                     Actualizar(nameof(Error));
                 }
-
-                Pedido.Fecha = DateTime.Now;
-
-                await service.Ordenar(Pedido);
-                Pedido = new Pedido();
-                NumeroMesa = 0;
-                Platillo1 = 0;
-                Bebida3 = 0;
-                Bebida1 = 0;
-                Bebida2 = 0;
-                Platillo2 = 0;
-                Platillo3 = 0;
-
-
-                Error = "";
-                Actualizar();
-
-
-
-                await Application.Current.MainPage.DisplayAlert("¡Listo!", "Su orden ya fue enviada", "Entendido");
-
 
 
             }
             catch (Exception ex)
             {
-                Error = ex.Message+ Environment.NewLine; ;
+                Error = ex.Message+ Environment.NewLine;
                 Actualizar(nameof(Error));
             }
 
