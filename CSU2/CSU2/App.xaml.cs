@@ -11,7 +11,7 @@ namespace CSU2
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new PedidoView());
         }
 
         protected override void OnStart()

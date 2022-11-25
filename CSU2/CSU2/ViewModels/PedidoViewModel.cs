@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Text;
 using Xamarin.Forms;
 
@@ -19,6 +20,7 @@ namespace CSU2.ViewModels
         #endregion
 
         #region Propiedades
+
 
         public Pedido Pedido { get; set; }
         public string Error { get; set; }
@@ -110,32 +112,38 @@ namespace CSU2.ViewModels
 
         private async void VerResumen()
         {
-            Error = "";
-            AgregarPlatillos();
-            AgregarBebidas();
-        
-            if (Pedido.NumeroMesa < 1)
-                Error = "Numero de mesa inválido" + Environment.NewLine;
-            if (Pedido.Bebidas.Count + Pedido.Platillos.Count < 1)
-                Error = "Debe ordenar al menos un platillo o una bebida";
-
-            
-
-            if (Error == "")
+            try
             {
-                
-                Pedido = new Pedido();
+                Error = "";
 
-                Pedido.NumeroMesa = NumeroMesa;
-                
+               
+                Pedido.Platillos.Clear();
+                Pedido.Bebidas.Clear();
 
+                AgregarPlatillos();
+                AgregarBebidas();
+                if (Pedido.NumeroMesa < 1)
+                    Error = " Numero de mesa inválido,";
+                if (Pedido.Bebidas.Count + Pedido.Platillos.Count < 1)
+                    Error = " Debe ordenar al menos un platillo o una bebida";
+
+
+                
                 Actualizar();
 
-                await Application.Current.MainPage.Navigation.PushAsync(DetallesPedidoView);
+                if (Error == "")
+                {
+                    
+                    await Application.Current.MainPage.Navigation.PushAsync(DetallesPedidoView);
+                }
+                else
+                {
+                    Actualizar(nameof(Error));
+                }
             }
-            else
+            catch (Exception m)
             {
-                Actualizar(nameof(Error));
+                Error = m.Message;
             }
 
         }
@@ -181,6 +189,8 @@ namespace CSU2.ViewModels
 
             if (Bebida1 > 0)
             {
+               
+
                 bebida = new Bebida()
                 {
                     Cantidad = Bebida1,
@@ -197,7 +207,7 @@ namespace CSU2.ViewModels
                 bebida = new Bebida()
                 {
                     Cantidad = Bebida2,
-                    Nombre = "Bebida2"
+                    Nombre = "Tecate"
                 };
 
                 Pedido.Bebidas.Add(bebida);
@@ -208,7 +218,7 @@ namespace CSU2.ViewModels
                 bebida = new Bebida()
                 {
                     Cantidad = Bebida3,
-                    Nombre = "Bebida3"
+                    Nombre = "Jugo"
                 };
 
                 Pedido.Bebidas.Add(bebida);

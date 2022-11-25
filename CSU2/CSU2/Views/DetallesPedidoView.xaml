@@ -2,44 +2,52 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:vm="clr-namespace:CSU2.ViewModels"
-             x:Class="CSU2.Views.DetallesPedidoView">
+             x:Class="CSU2.Views.DetallesPedidoView" NavigationPage.HasNavigationBar="False">
 
 
-    
-    <Grid>
+
+    <Grid BackgroundColor="#8da6ae">
         <Grid.RowDefinitions>
             <RowDefinition Height="7*"></RowDefinition>
             <RowDefinition Height="3*"></RowDefinition>
         </Grid.RowDefinitions>
         <StackLayout>
-            <Label HorizontalOptions="Center" Margin="0,30,0,0" FontSize="40">Resumen</Label>
-            <Label Margin="20,30" FontSize="20" Text="{Binding NumeroMesa}"></Label>
+            <Label TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,30,0,0" FontSize="40">Resumen</Label>
 
-            <Label HorizontalOptions="Start" Margin="20,20" FontSize="20">Platillos:</Label>
-            <ListView>
+            <StackLayout Orientation="Horizontal" Margin="20,20,0,10" >
+                <Label TextColor="White" FontAttributes="Bold" VerticalOptions="Center" HorizontalTextAlignment="Center" FontSize="20">Numero de mesa:</Label>
+                <Label TextColor="#fff8ee" VerticalOptions="Center" Text="{Binding Pedido.NumeroMesa}" FontSize="20"></Label>
+            </StackLayout>
+            <Label TextColor="White" FontAttributes="Bold" HorizontalOptions="Start" Margin="20,20" FontSize="20">Platillos:</Label>
+            <CollectionView ItemsSource="{Binding Pedido.Platillos}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal" Padding="7">
+                            <Label TextColor="#fff8ee" Margin="20,0,0,0" FontSize="20" Text="{Binding Cantidad}"></Label>
+                            <Label TextColor="#fff8ee" Margin="20,0,0,0" FontSize="20" Text="{Binding Nombre}"></Label>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
-                <ListView.ItemTemplate >
+            <Label TextColor="White" FontAttributes="Bold" HorizontalOptions="Start" Margin="20,20" FontSize="20">Bebidas:</Label>
+            <CollectionView ItemsSource="{Binding Pedido.Bebidas}">
+                <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Label  Margin="10" FontSize="20" Text="{Binding Pedido}"></Label>
+                        <StackLayout Orientation="Horizontal" Padding="7">
+                            <Label TextColor="#fff8ee" Margin="20,0,0,0" FontSize="20" Text="{Binding Cantidad}"></Label>
+                            <Label TextColor="#fff8ee"  Margin="20,0,0,0" FontSize="20" Text="{Binding Nombre}"></Label>
+                        </StackLayout>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            
-            <Label HorizontalOptions="Start" Margin="20,20" FontSize="20">Bebidas:</Label>
-            <ListView>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <Label  Margin="10" FontSize="20" Text="{Binding Bebida1}"></Label>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
             
         </StackLayout>
 
-        <StackLayout Grid.Row="1" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,50,0,0">
-            <Button WidthRequest="150" Text="Regresar" Command="{Binding RegresarCommand}"></Button>
-            <Button WidthRequest="150" Text="Ordenar" Command="{Binding OrdenarCommand}"></Button>
+        <StackLayout Grid.Row="1" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,50,0,0" Spacing="30">
+            <Button BackgroundColor="#f26d3c" TextColor="White" WidthRequest="150" Text="Regresar" Command="{Binding RegresarCommand}"></Button>
+            <Button BackgroundColor="#f26d3c" TextColor="White" WidthRequest="150" Text="Ordenar" Command="{Binding OrdenarCommand}"></Button>
         </StackLayout>
     </Grid>
 </ContentPage>

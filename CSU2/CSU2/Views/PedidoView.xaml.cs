@@ -14,7 +14,9 @@ namespace CSU2.Views
     {
         public PedidoView()
         {
+            NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
+            
         }
     }
 }
