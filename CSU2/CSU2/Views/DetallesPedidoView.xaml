@@ -42,6 +42,7 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
+            <Label FontSize="15" Margin="0,0,0,5" Text="{Binding Error}" VerticalOptions="Start" HorizontalTextAlignment="Center" TextColor="Red"></Label>
             
         </StackLayout>
 
