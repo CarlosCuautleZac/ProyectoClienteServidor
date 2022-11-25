@@ -12,7 +12,7 @@
     </Window.DataContext>
     <Grid>
 
-        <ListBox ItemsSource="{Binding Pedidos}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
+        <ListBox FontFamily="Times New Roman" ItemsSource="{Binding Pedidos}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
 
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -22,13 +22,13 @@
 
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Button BorderBrush="Black" BorderThickness="2" Click="Button_Click" Background="Transparent" Width="200" Height="180">
+                    <Border CornerRadius="5" Background="Transparent" Width="200" Height="180">
                         <StackPanel Cursor="Hand" Margin="10">
-                            <Image Width="200" Height="120" Source="/Assets/comidaEnCamino.jpg"></Image>
-                            <TextBlock HorizontalAlignment="Center">Mesa: <Span><Run Text="{Binding NumeroMesa}"></Run></Span></TextBlock>
-                            <TextBlock HorizontalAlignment="Center">Hora: <Span><Run Text="{Binding Fecha, StringFormat='hh:mm'}"></Run></Span></TextBlock>
+                            <Image Width="200" Height="120" Source="/Assets/comidaEnCamino.png"></Image>
+                            <TextBlock FontSize="13" HorizontalAlignment="Center">Mesa: <Span><Run Text="{Binding NumeroMesa}"></Run></Span></TextBlock>
+                            <TextBlock FontSize="13" HorizontalAlignment="Center">Hora: <Span><Run Text="{Binding Fecha, StringFormat='hh:mm'}"></Run></Span></TextBlock>
                         </StackPanel>
-                    </Button>
+                    </Border>
 
                 </DataTemplate>
             </ListBox.ItemTemplate>

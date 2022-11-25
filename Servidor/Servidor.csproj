@@ -9,12 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Assets\comidaEnCamino.jpg" />
+    <None Remove="Assets\comidaEnCamino.png" />
     <None Remove="Assets\FonditaCoffee.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Assets\comidaEnCamino.jpg">
+    <EmbeddedResource Include="Assets\comidaEnCamino.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Assets\FonditaCoffee.png">

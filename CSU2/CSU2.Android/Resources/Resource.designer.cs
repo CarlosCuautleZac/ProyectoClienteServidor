@@ -14,7 +14,7 @@ namespace CSU2.Droid
 {
 	
 	
-	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "13.0.0.73")]
+	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "13.1.0.5")]
 	public partial class Resource
 	{
 		
@@ -18797,12 +18797,6 @@ namespace CSU2.Droid
 			
 			// aapt resource value: 0x7F0C0000
 			public const int icon = 2131492864;
-			
-			// aapt resource value: 0x7F0C0001
-			public const int icon_adaptive_back = 2131492865;
-			
-			// aapt resource value: 0x7F0C0002
-			public const int icon_adaptive_fore = 2131492866;
 			
 			static Mipmap()
 			{
