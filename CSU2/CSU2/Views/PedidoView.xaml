@@ -2,8 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:CSU2.ViewModels"
-             x:Class="CSU2.MainPage">
-
+             x:Class="CSU2.Views.PedidoView">
+    
     <ContentPage.BindingContext>
         <vm:PedidoViewModel></vm:PedidoViewModel>
     </ContentPage.BindingContext>
@@ -13,7 +13,7 @@
 
         <StackLayout Orientation="Horizontal" Margin="10,0" >
             <Label VerticalOptions="Center" HorizontalTextAlignment="Center" FontSize="17">Numero de mesa:</Label>
-            <Entry VerticalOptions="Center" Text="{Binding Pedido.NumeroMesa}" HorizontalOptions="FillAndExpand" Keyboard="Numeric"></Entry>
+            <Entry VerticalOptions="Center" Text="{Binding NumeroMesa}" HorizontalOptions="FillAndExpand" Keyboard="Numeric"></Entry>
 
         </StackLayout>
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
@@ -80,8 +80,8 @@
                             <ColumnDefinition Width="150"></ColumnDefinition>
                             <ColumnDefinition ></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                            <Image Grid.Row="1" Grid.Column="0" HorizontalOptions="Start" HeightRequest="100" Source="https://www.recetasnestle.com.mx/sites/default/files/styles/recipe_detail_desktop/public/srh_recipes/c1a47a2e6bd19313b88b7946867a4059.jpg.webp?itok=UHFQS0v6"></Image>
-                            <Label Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,15">Enchiladas Verdes</Label>
+                        <Image Grid.Row="1" Grid.Column="0" HorizontalOptions="Start" HeightRequest="100" Source="https://www.recetasnestle.com.mx/sites/default/files/styles/recipe_detail_desktop/public/srh_recipes/c1a47a2e6bd19313b88b7946867a4059.jpg.webp?itok=UHFQS0v6"></Image>
+                        <Label Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,15">Enchiladas Verdes</Label>
                         <StackLayout Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
                             <Stepper HorizontalOptions="Center" VerticalOptions="Center"  Increment="1" Value="{Binding Platillo3}"></Stepper>
                             <Label VerticalOptions="Center" FontSize="20" Text="{Binding Platillo3}"></Label>
@@ -163,5 +163,4 @@
         <Button WidthRequest="100" Margin="10" VerticalOptions="EndAndExpand" CornerRadius="5" Command="{Binding VerResumenCommand}" Text="Ver Resumen"></Button>
         <Label Text="{Binding Error}" VerticalOptions="End" TextColor="Red"></Label>
     </StackLayout>
-
 </ContentPage>

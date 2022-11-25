@@ -17,6 +17,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\" />
+    <EmbeddedResource Update="Views\DetallesPedidoView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PedidoView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

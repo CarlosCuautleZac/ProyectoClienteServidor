@@ -1,5 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
+using CSU2.Views;
 using Xamarin.Forms.Xaml;
 
 namespace CSU2
@@ -10,7 +11,7 @@ namespace CSU2
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
