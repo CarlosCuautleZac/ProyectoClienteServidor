@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Servidor.Models;
+using Servidor.ViewModels;
 using Servidor.Views;
 
 namespace Servidor.Views
@@ -25,6 +26,15 @@ namespace Servidor.Views
         public ComandaView()
         {
             InitializeComponent();
+        }
+
+        private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ClickCount == 2 && e.LeftButton == MouseButtonState.Pressed) //doble clic con el boton izquierdo
+            {
+                var viewmodel = (PedidosViewModel)this.DataContext;
+                viewmodel.VetDetallesCommand.Execute(null);
+            }
         }
     }
 }

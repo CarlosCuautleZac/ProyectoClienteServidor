@@ -12,11 +12,15 @@ namespace Servidor.Services
 {
     public class PedidoService
     {
+
         HttpListener listener;
         public event Action<Pedido>? PedidoRecibido;
 
+        public Pedido Pedido { get; set; }
+
         public PedidoService()
         {
+            Pedido = new Pedido();
             listener = new();
             listener.Prefixes.Add("http://*:2022/pedidos/");
         }

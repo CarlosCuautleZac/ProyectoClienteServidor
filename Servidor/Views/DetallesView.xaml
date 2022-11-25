@@ -4,8 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Servidor.Views" 
-        xmlns:viewmodels="clr-namespace:Servidor.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:PedidosViewModel}"
-        mc:Ignorable="d"
+        xmlns:viewmodels="clr-namespace:Servidor.ViewModels"
         Title="DetallesView" Background="Black" FontFamily="Times New Roman" FontSize="15" WindowStartupLocation="CenterScreen" Height="500" Width="400">
     <StackPanel Margin="20" Background="BlanchedAlmond">
         <StackPanel.Resources>
@@ -20,39 +19,44 @@
         <TextBlock>Número de mesa:</TextBlock>
         <Label Content="{Binding Pedido.NumeroMesa}"></Label>
         <TextBlock>Cantidad y platillos:</TextBlock>
-        <ListBox HorizontalContentAlignment="Center" Margin="10">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="20"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="50"></ColumnDefinition>
-                    <ColumnDefinition Width="180"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0">3</TextBlock>
-                <TextBlock Grid.Column="1">Enchiladas verdes</TextBlock>
-            </Grid>
+        <ListBox HorizontalContentAlignment="Center" Margin="10" ItemsSource="{Binding Pedido.Platillos}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"></ColumnDefinition>
+                            <ColumnDefinition Width="180"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding Cantidad}"></TextBlock>
+                        <TextBlock Grid.Column="1" Text="{Binding Nombre}"></TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
 
         <TextBlock>Cantidad y bebidas:</TextBlock>
-        <ListBox HorizontalContentAlignment="Center" Margin="10">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="20"></RowDefinition>
-                    <RowDefinition Height="20"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="50"></ColumnDefinition>
-                    <ColumnDefinition Width="180"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0">1</TextBlock>
-                <TextBlock Grid.Column="1">Tecate</TextBlock>
-                <TextBlock Grid.Column="0" Grid.Row="1">2</TextBlock>
-                <TextBlock Grid.Column="1" Grid.Row="1">Coca cola</TextBlock>
-            </Grid>
+        <ListBox HorizontalContentAlignment="Center" Margin="10" ItemsSource="{Binding Pedido.Bebidas}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"></ColumnDefinition>
+                            <ColumnDefinition Width="180"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding Cantidad}"></TextBlock>
+                        <TextBlock Grid.Column="1" Text="{Binding Nombre}"></TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
 
-        <Button Style="{DynamicResource BtnEstilo1}" Background="AliceBlue" BorderBrush="Black" BorderThickness="3" Margin="30" MaxWidth="200">Regresar</Button>
+        <!--<Button Style="{DynamicResource BtnEstilo1}" Background="AliceBlue" BorderBrush="Black" BorderThickness="3" Margin="30" MaxWidth="200">Regresar</Button>-->
 
     </StackPanel>
 </Window>

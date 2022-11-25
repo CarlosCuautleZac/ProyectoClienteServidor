@@ -14,7 +14,7 @@ namespace CSU2.Services
 
         public PedidoService()
         {
-            client.BaseAddress = new Uri("https://9b64-2806-108e-26-7eae-4d18-a9a1-4034-2b7.ngrok.io/pedidos/");
+            client.BaseAddress = new Uri("https://8983-2806-108e-26-7eae-4d18-a9a1-4034-2b7.ngrok.io/pedidos/");
         }
 
 
