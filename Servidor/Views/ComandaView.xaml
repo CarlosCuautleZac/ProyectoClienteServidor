@@ -6,27 +6,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Servidor.Views"
         mc:Ignorable="d"
-        Title="ComandaView" WindowStartupLocation="CenterScreen" Height="450" Width="800">
+        Title="ComandaView" WindowStartupLocation="CenterScreen" Background="Black" Height="450" Width="800">
     <Window.DataContext>
         <vm:PedidosViewModel></vm:PedidosViewModel>
     </Window.DataContext>
     <Grid>
 
+        <Grid.Background>
+            <ImageBrush Stretch="UniformToFill" ImageSource="https://st2.depositphotos.com/1044374/5527/v/450/depositphotos_55279345-stock-illustration-set-of-hand-drawn-cookware.jpg"></ImageBrush>
+        </Grid.Background>
+
         <ListBox FontFamily="Times New Roman" ItemsSource="{Binding Pedidos}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
 
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel  Margin="10"></WrapPanel>
+                    <WrapPanel Margin="10"></WrapPanel>
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
 
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Border CornerRadius="5" Background="Transparent" Width="200" Height="180">
+                    <Border Background="BlanchedAlmond" CornerRadius="25" BorderBrush="Black" BorderThickness="3" Width="200" Height="180">
                         <StackPanel Cursor="Hand" Margin="10">
                             <Image Width="200" Height="120" Source="/Assets/comidaEnCamino.png"></Image>
-                            <TextBlock FontSize="13" HorizontalAlignment="Center">Mesa: <Span><Run Text="{Binding NumeroMesa}"></Run></Span></TextBlock>
-                            <TextBlock FontSize="13" HorizontalAlignment="Center">Hora: <Span><Run Text="{Binding Fecha, StringFormat='hh:mm'}"></Run></Span></TextBlock>
+                            <TextBlock FontSize="15" HorizontalAlignment="Center">Mesa: <Span><Run Text="{Binding NumeroMesa}"></Run></Span></TextBlock>
+                            <TextBlock FontSize="15" HorizontalAlignment="Center">Hora: <Span><Run Text="{Binding Fecha, StringFormat='hh:mm'}"></Run></Span></TextBlock>
                         </StackPanel>
                     </Border>
 
