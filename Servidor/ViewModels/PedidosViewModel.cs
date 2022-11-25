@@ -48,6 +48,8 @@ namespace Servidor.ViewModels
                 Pedidos.Remove(Pedido);
                 if (detallesView != null)
                     detallesView.Close();
+
+                Pedidos = new(Pedidos.OrderBy(x => x.Fecha)); 
                 Actualizar();
             }
         }
@@ -68,6 +70,9 @@ namespace Servidor.ViewModels
                 Pedidos.Add(pedido);
                 Actualizar(nameof(Pedidos));
             });
+
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer("Assets/Sounds/Campana.wav");
+            player.Play();
         }
 
 

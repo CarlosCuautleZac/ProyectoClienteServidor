@@ -14,6 +14,8 @@
     <None Remove="Assets\FonditaCoffee2.png" />
     <None Remove="Assets\FredokaOne-Regular.ttf" />
     <None Remove="Assets\Poppins-Light.ttf" />
+    <None Remove="Assets\Sounds\Campana de servicio.mp3" />
+    <None Remove="Assets\Sounds\Campana.wav" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,6 +23,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Assets\FonditaCoffee.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Sounds\Campana.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <Content Include="Assets\FredokaOne-Regular.ttf">
