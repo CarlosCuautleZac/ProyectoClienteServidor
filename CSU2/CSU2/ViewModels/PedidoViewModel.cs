@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace CSU2.ViewModels
@@ -152,8 +153,13 @@ namespace CSU2.ViewModels
         {
             try
             {
-                Pedido.Fecha = DateTime.Now;
+                if(Connectivity.NetworkAccess != NetworkAccess.Internet)
+                {
+                    Error = "No hay Conexion a internet" + Environment.NewLine;
+                    Actualizar(nameof(Error));
+                }
 
+                Pedido.Fecha = DateTime.Now;
 
                 await service.Ordenar(Pedido);
                 Pedido = new Pedido();
@@ -169,6 +175,8 @@ namespace CSU2.ViewModels
                 Error = "";
                 Actualizar();
 
+
+
                 await Application.Current.MainPage.DisplayAlert("¡Listo!", "Su orden ya fue enviada", "Entendido");
 
 
@@ -176,7 +184,7 @@ namespace CSU2.ViewModels
             }
             catch (Exception ex)
             {
-                Error = ex.Message;
+                Error = ex.Message+ Environment.NewLine; ;
                 Actualizar(nameof(Error));
             }
 
