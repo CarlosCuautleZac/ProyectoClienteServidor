@@ -11,6 +11,9 @@
   <ItemGroup>
     <None Remove="Assets\comidaEnCamino.png" />
     <None Remove="Assets\FonditaCoffee.png" />
+    <None Remove="Assets\FonditaCoffee2.png" />
+    <None Remove="Assets\FredokaOne-Regular.ttf" />
+    <None Remove="Assets\Poppins-Light.ttf" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +23,15 @@
     <EmbeddedResource Include="Assets\FonditaCoffee.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <Content Include="Assets\FredokaOne-Regular.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\FonditaCoffee2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Poppins-Light.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

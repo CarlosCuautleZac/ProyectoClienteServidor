@@ -174,7 +174,6 @@ namespace CSU2.ViewModels
 
 
 
-                    await Application.Current.MainPage.DisplayAlert("¡Listo!", "Su orden ya fue enviada", "Entendido");
                     Regresar();
                 }
                 else

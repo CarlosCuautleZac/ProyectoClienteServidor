@@ -7,21 +7,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Servidor.Views"
         mc:Ignorable="d"
-        Title="ComandaView" WindowStartupLocation="CenterScreen" Background="Black" Height="450" Width="800">
+        Title="Comandas Entrantes" Background="#a4bdc6" WindowStartupLocation="CenterScreen"  Height="450" Width="800">
     <Window.DataContext>
         <vm:PedidosViewModel></vm:PedidosViewModel>
     </Window.DataContext>
 
     <Window.Resources>
         <hp:TimeToColorConverter x:Key="colorconverter"></hp:TimeToColorConverter>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="pack://application:,,,/Assets/#Fredoka One"></Setter>
+        </Style>
     </Window.Resources>
     <Grid>
 
-        <Grid.Background>
-            <ImageBrush Stretch="UniformToFill" ImageSource="https://st2.depositphotos.com/1044374/5527/v/450/depositphotos_55279345-stock-illustration-set-of-hand-drawn-cookware.jpg"></ImageBrush>
-        </Grid.Background>
 
-        <ListBox FontFamily="Times New Roman" ItemsSource="{Binding Pedidos}" SelectedItem="{Binding Pedido}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
+        <ListBox Background="Transparent" BorderThickness="0"  ItemsSource="{Binding Pedidos}" SelectedItem="{Binding Pedido}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
 
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -31,11 +32,11 @@
 
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Border Background="BlanchedAlmond" CornerRadius="25" BorderBrush="{Binding Fecha, Converter={StaticResource colorconverter}}" BorderThickness="3" Width="200" Height="180" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+                    <Border Background="#ff7f3e" CornerRadius="25" BorderBrush="#b2582b" BorderThickness="3" Width="200" Height="190" MouseLeftButtonDown="Border_MouseLeftButtonDown">
                         <StackPanel Cursor="Hand" Margin="10">
-                            <Image Width="200" Height="120" Source="/Assets/comidaEnCamino.png"></Image>
-                            <TextBlock FontSize="15" HorizontalAlignment="Center">Mesa: <Span><Run Text="{Binding NumeroMesa}"></Run></Span></TextBlock>
-                            <TextBlock FontSize="15" HorizontalAlignment="Center">Hora: <Span><Run Text="{Binding Fecha, StringFormat='hh:mm'}"></Run></Span></TextBlock>
+                            <Image Width="200" Height="120" Source="/Assets/FonditaCoffee2.png"></Image>
+                            <TextBlock Margin="0,5,0,0"  FontFamily="pack://application:,,,/Assets/#Fredoka One" FontSize="20" HorizontalAlignment="Center">Mesa: <Span><Run Text="{Binding NumeroMesa}"></Run></Span></TextBlock>
+                            <TextBlock FontFamily="pack://application:,,,/Assets/#Fredoka One"  FontSize="15" HorizontalAlignment="Center">Hora: <Span><Run Text="{Binding Fecha, StringFormat='hh:mm'}"></Run></Span></TextBlock>
                         </StackPanel>
                     </Border>
 

@@ -12,7 +12,7 @@
             <RowDefinition Height="3*"></RowDefinition>
         </Grid.RowDefinitions>
         <StackLayout>
-            <Label TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,30,0,0" FontSize="40">Resumen</Label>
+            <Label FontFamily="pack://application:,,,/Assets/#Poppins Light" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,30,0,0" FontSize="40">Resumen</Label>
 
             <StackLayout Orientation="Horizontal" Margin="20,20,0,10" >
                 <Label TextColor="White" FontAttributes="Bold" VerticalOptions="Center" HorizontalTextAlignment="Center" FontSize="20">Numero de mesa:</Label>

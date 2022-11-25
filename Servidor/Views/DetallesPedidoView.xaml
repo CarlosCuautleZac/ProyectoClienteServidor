@@ -1,0 +1,68 @@
+﻿<Window x:Class="Servidor.Views.DetallesPedidoView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Servidor.Views"
+        mc:Ignorable="d"
+        Title="DetallesView" Background="#2b2b2b" FontFamily="pack://application:,,,/Assets/#Poppins Light" FontSize="15" WindowStartupLocation="CenterScreen" Height="500" Width="400">
+    <Border Margin="20" CornerRadius="25" Background="#a4bdc6">
+        <StackPanel Background="Transparent">
+
+            <StackPanel.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                </Style>
+                <Style TargetType="Label">
+                    <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                </Style>
+            </StackPanel.Resources>
+
+            <TextBlock FontSize="30" Margin="0,10,0,15">Comanda</TextBlock>
+
+
+            <TextBlock Text="Número de mesa:"></TextBlock>
+            <Label Content="{Binding Pedido.NumeroMesa}"></Label>
+            <TextBlock>Cantidad y platillos:</TextBlock>
+            <ListBox HorizontalContentAlignment="Center" IsEnabled="False" Margin="10" ItemsSource="{Binding Pedido.Platillos}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="20"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition  Width="50"></ColumnDefinition>
+                                <ColumnDefinition Width="200"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock TextAlignment="Center"  Grid.Column="0" Text="{Binding Cantidad}"></TextBlock>
+                            <TextBlock TextAlignment="Left" Grid.Column="1" Text="{Binding Nombre}"></TextBlock>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <TextBlock>Cantidad y bebidas:</TextBlock>
+            <ListBox HorizontalContentAlignment="Center" IsEnabled="False" Margin="10" ItemsSource="{Binding Pedido.Bebidas}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="20"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition  Width="50"></ColumnDefinition>
+                                <ColumnDefinition Width="200"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock TextAlignment="Center"  Grid.Column="0" Text="{Binding Cantidad}"></TextBlock>
+                            <TextBlock TextAlignment="Left" Grid.Column="1" Text="{Binding Nombre}"></TextBlock>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <Button Margin="0,0,0,20" Command="{Binding EntregarPedidoCommand}" Style="{DynamicResource BtnEstilo1}" Background="AliceBlue" BorderBrush="Black" BorderThickness="3"  MaxWidth="200">Entregado</Button>
+
+        </StackPanel>
+    </Border>
+</Window>
