@@ -1,9 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:vm="clr-namespace:CSU2.ViewModels"
              x:Class="CSU2.Views.DetallesPedidoView">
 
 
+    
+    <ContentPage.BindingContext>
+        <vm:PedidoViewModel></vm:PedidoViewModel>
+    </ContentPage.BindingContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="7*"></RowDefinition>
@@ -11,14 +16,14 @@
         </Grid.RowDefinitions>
         <StackLayout>
             <Label HorizontalOptions="Center" Margin="0,30,0,0" FontSize="40">Resumen</Label>
-            <Label Margin="20,30" FontSize="20">Numero de mesa: 2</Label>
+            <Label Margin="20,30" FontSize="20" Text="{Binding NumeroMesa}"></Label>
 
             <Label HorizontalOptions="Start" Margin="20,20" FontSize="20">Platillos:</Label>
             <ListView>
 
                 <ListView.ItemTemplate >
                     <DataTemplate>
-                        <Label  Margin="10" FontSize="20">2 Carne Asada</Label>
+                        <Label  Margin="10" FontSize="20" Text="{Binding Pedido}"></Label>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
@@ -27,7 +32,7 @@
             <ListView>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Label  Margin="10" FontSize="20">2 Coca Cola</Label>
+                        <Label  Margin="10" FontSize="20" Text="{Binding Bebida1}"></Label>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
